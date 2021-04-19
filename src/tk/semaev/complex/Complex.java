@@ -1,4 +1,4 @@
-package com.company;
+package tk.semaev.complex;
 
 public class Complex {
     private double real_part;

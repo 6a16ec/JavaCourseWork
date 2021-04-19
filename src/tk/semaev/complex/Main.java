@@ -1,6 +1,4 @@
-package com.company;
-
-import java.io.Serial;
+package tk.semaev.complex;
 
 public class Main {
 

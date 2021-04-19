@@ -1,4 +1,4 @@
-package com.company;
+package tk.semaev.complex;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
