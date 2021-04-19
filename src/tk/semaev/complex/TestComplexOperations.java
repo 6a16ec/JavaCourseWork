@@ -8,20 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TestComplexOperations {
     @Test
-    @DisplayName("Addition and creating a new object")
-    public void test001() {
-        Complex num1 = new Complex(1, 10);
-        String num1_str = num1.toString();
-        Complex num2 = new Complex(-10, -1);
-        String num2_str = num2.toString();
-        Complex result = Complex.addition(num1, num2);
-        assertEquals("-9 + 9i", result.toString());
-        // Check that the objects themselves are not corrupted
-        assertEquals(num1_str, num1.toString());
-        assertEquals(num2_str, num2.toString());
-    }
-
-    @Test
     @DisplayName("Addition to an existing object")
     public void test002() {
         Complex num1 = new Complex(22, -22);
@@ -34,20 +20,6 @@ class TestComplexOperations {
     }
 
     @Test
-    @DisplayName("Subtraction and creating a new object")
-    public void test003() {
-        Complex num1 = new Complex(30, -33);
-        String num1_str = num1.toString();
-        Complex num2 = new Complex(-3, -3);
-        String num2_str = num2.toString();
-        Complex result = Complex.subtraction(num1, num2);
-        assertEquals("33 - 30i", result.toString());
-        // Check that the objects themselves are not corrupted
-        assertEquals(num1_str, num1.toString());
-        assertEquals(num2_str, num2.toString());
-    }
-
-    @Test
     @DisplayName("Subtract from an existing object")
     public void test004() {
         Complex num1 = new Complex(400, -4);
@@ -56,20 +28,6 @@ class TestComplexOperations {
         num1.subtraction(num2);
         assertEquals("356 - 8i", num1.toString());
         // Checking that the num2 object has not been corrupted
-        assertEquals(num2_str, num2.toString());
-    }
-
-    @Test
-    @DisplayName("Multiplication and creating a new object")
-    public void test005() {
-        Complex num1 = new Complex(55, -5);
-        String num1_str = num1.toString();
-        Complex num2 = new Complex(-5, 5);
-        String num2_str = num2.toString();
-        Complex result = Complex.multiplication(num1, num2);
-        assertEquals("-250 + 300i", result.toString());
-        // Check that the objects themselves are not corrupted
-        assertEquals(num1_str, num1.toString());
         assertEquals(num2_str, num2.toString());
     }
 
@@ -140,20 +98,5 @@ class TestComplexOperations {
 //        assertEquals(num2_str, num2.toString());
     }
 
-    @Test
-    @DisplayName("Subdivision of an existing object")
-    public void test012() throws Exception {
-        Complex num1 = new Complex(110, -11);
-        Complex num2 = new Complex(11, -11);
-//        String num2_str = num2.toString();
-
-
-//        num1.division(num2);
-
-
-        assertEquals("5.5 + 4.5i", Complex.division(num1, num2).toString());
-        // Checking that the num2 object has not been corrupted
-//        assertEquals(num2_str, num2.toString());
-    }
 
 }

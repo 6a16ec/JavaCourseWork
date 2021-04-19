@@ -9,8 +9,6 @@ public class Main {
 //        num1.multiplication(num2);
 //        System.out.println(num1);
 
-        Complex heh = Complex.subtraction(num1, num2);
-        System.out.println(heh);
         num1.subtraction(num2);
         System.out.println(num1);
     }
