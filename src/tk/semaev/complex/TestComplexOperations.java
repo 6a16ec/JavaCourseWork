@@ -93,8 +93,6 @@ class TestComplexOperations {
         num1.division(num2);
 
         assertEquals("5.5 + 4.5i", num1.toString());
-        // Checking that the num2 object has not been corrupted
-//        assertEquals(num2_str, num2.toString());
     }
 
     @Test
@@ -118,6 +116,5 @@ class TestComplexOperations {
         String actualMessage = exception.getMessage();
         assertTrue(actualMessage.contains("Division by zero"));
     }
-
 
 }

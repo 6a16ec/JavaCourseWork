@@ -106,29 +106,6 @@ public class Complex {
         this.multiplication(associated);
         divider.multiplication(associated);
         this.divisionByReal(divider);
-        // divide by zero!!
     }
-
-
-
-
-//    private Complex getConjugate() {
-//        Complex complex = new Complex();
-//    }
-
-//    public void division(Complex another) {
-//        // a = r1 + i1*i // b = r2 + i2*i
-//        // result = a * b = (r1 + i1*i) * (r2 + i2*i)
-//        // result = (r1 * r2 - i1 * i2) + (r1 * i2 + i1 * r2)*i
-//        double r1 = this.real_part, i1 = this.imaginary_part;
-//        double r2 = another.real_part, i2 = another.imaginary_part;
-//        Complex conjugate = new Complex(r2, -i2);
-//    }
-
-    //    private Complex(Complex another){
-//        System.out.println("hello");
-//    }
-
-//    public String toString()
 
 }
