@@ -3,7 +3,7 @@ package tk.semaev.complex;
 public class Complex {
     private double real_part;
     private double imaginary_part;
-    final private double eps = 1e-6;
+    final static private double eps = 1e-6;
 
     public Complex(){
         this.real_part = 0.0;
@@ -29,27 +29,23 @@ public class Complex {
         return string;
     }
 
-    private Boolean isZero(double number) {
+    static private Boolean isZero(double number) {
         return Math.abs(number) < eps;
-    }
-
-    private Boolean notZero(double number) {
-        return !isZero(number);
     }
 
     @Override
     public String toString() {
         String result = "";
-        if (notZero(real_part) || isZero(imaginary_part)) {
+        if (!isZero(real_part) || isZero(imaginary_part)) {
             result += toString(real_part);
         }
-        if (notZero(imaginary_part)) {
+        if (!isZero(imaginary_part)) {
             if (imaginary_part > 0) {
-                if (notZero(real_part)) {
+                if (!isZero(real_part)) {
                     result += " + ";
                 }
             } else {
-                if (notZero(real_part)) {
+                if (!isZero(real_part)) {
                     result += " - ";
                 } else {
                     result += "-";
