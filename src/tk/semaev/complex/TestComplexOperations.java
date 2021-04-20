@@ -115,4 +115,10 @@ class TestComplexOperations {
         assertTrue(actualMessage.contains("Division by zero"));
     }
 
+    @Test
+    @DisplayName("Checking the trigonometricForm method")
+    public void test014() {
+        Complex num1 = new Complex(1, 0);
+        assertEquals("1.0 * (cos(0.0) + i * sin(0.0))", num1.trigonometricForm());
+    }
 }

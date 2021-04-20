@@ -114,4 +114,14 @@ public class Complex {
         this.divisionByReal(divisor);
     }
 
+    public String trigonometricForm() {
+        double r = Math.sqrt(Math.pow(real_part, 2) + Math.pow(imaginary_part, 2));
+        double fi = Math.atan(imaginary_part / real_part);
+        return r + " * " +
+                "(" +
+                "cos(" + fi + ")" +
+                " + " +
+                "i * sin(" + fi + ")" +
+                ")";
+    }
 }
