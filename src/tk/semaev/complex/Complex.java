@@ -106,7 +106,8 @@ public class Complex {
         }
     }
 
-    public void division(Complex divider) throws Exception {
+    public void division(Complex divider_obj) throws Exception {
+        Complex divider = new Complex(divider_obj);
         Complex associated = divider.getAssociated();
         this.multiplication(associated);
         divider.multiplication(associated);

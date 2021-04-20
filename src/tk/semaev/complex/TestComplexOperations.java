@@ -87,12 +87,10 @@ class TestComplexOperations {
     public void test011() throws Exception {
         Complex num1 = new Complex(110, -11);
         Complex num2 = new Complex(11, -11);
-//        String num2_str = num2.toString();
-
-
+        String num2_str = num2.toString();
         num1.division(num2);
-
         assertEquals("5.5 + 4.5i", num1.toString());
+        assertEquals(num2_str, num2.toString());
     }
 
     @Test
