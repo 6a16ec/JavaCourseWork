@@ -93,25 +93,25 @@ public class Complex {
     }
 
 
-    public void divisionByReal(Complex divider) throws Exception {
-        if (divider.isReal()) {
-            if (!isZero(divider.real_part)) {
-                this.real_part /= divider.real_part;
-                this.imaginary_part /= divider.real_part;
+    public void divisionByReal(Complex divisor) throws Exception {
+        if (divisor.isReal()) {
+            if (!isZero(divisor.real_part)) {
+                this.real_part /= divisor.real_part;
+                this.imaginary_part /= divisor.real_part;
             } else {
                 throw new Exception("Division by zero");
             }
         } else {
-            throw new Exception("The divider is not a real number");
+            throw new Exception("The divisor is not a real number");
         }
     }
 
-    public void division(Complex divider_obj) throws Exception {
-        Complex divider = new Complex(divider_obj);
-        Complex associated = divider.getAssociated();
+    public void division(Complex divisor_obj) throws Exception {
+        Complex divisor = new Complex(divisor_obj);
+        Complex associated = divisor.getAssociated();
         this.multiplication(associated);
-        divider.multiplication(associated);
-        this.divisionByReal(divider);
+        divisor.multiplication(associated);
+        this.divisionByReal(divisor);
     }
 
 }

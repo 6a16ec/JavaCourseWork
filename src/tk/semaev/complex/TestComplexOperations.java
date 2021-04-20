@@ -94,18 +94,18 @@ class TestComplexOperations {
     }
 
     @Test
-    @DisplayName("Checking the method divisionByReal throw, when divader is complex")
+    @DisplayName("Checking the method divisionByReal throw, when divisor is complex")
     public void test012() {
         Complex num1 = new Complex(12, 12);
         Complex num2 = new Complex(12, 12);
 
         Exception exception = assertThrows(Exception.class, () -> num1.divisionByReal(num2));
         String actualMessage = exception.getMessage();
-        assertTrue(actualMessage.contains("The divider is not a real number"));
+        assertTrue(actualMessage.contains("The divisor is not a real number"));
     }
 
     @Test
-    @DisplayName("Checking the method divisionByReal throw, when divide by 0")
+    @DisplayName("Checking the method divisionByReal throw, when divisor by 0")
     public void test013() {
         Complex num1 = new Complex(12, 12);
         Complex num2 = new Complex(0, 0);
