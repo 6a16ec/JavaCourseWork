@@ -79,4 +79,12 @@ public class TestComplexToString {
         assertEquals("-100 - 100i", complex.toString());
     }
 
+    @Test
+    @DisplayName("Checking the operation of the copy constructor")
+    public void test011() {
+        complex = new Complex(11, 11);
+        Complex complex2 = new Complex(complex);
+        assertEquals(complex.toString(), complex2.toString());
+    }
+
 }

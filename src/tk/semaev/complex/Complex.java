@@ -15,6 +15,11 @@ public class Complex {
         this.imaginary_part = imaginary_part;
     }
 
+    public Complex(Complex complex) {
+        this.real_part = complex.real_part;
+        this.imaginary_part = complex.imaginary_part;
+    }
+
     boolean isReal() {
         return isZero(imaginary_part);
     }
