@@ -3,8 +3,7 @@ package tk.semaev.complex;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class TestComplexOperations {
     @Test
@@ -85,7 +84,7 @@ class TestComplexOperations {
 
     @Test
     @DisplayName("Subdivision of an existing object")
-    public void test011() {
+    public void test011() throws Exception {
         Complex num1 = new Complex(110, -11);
         Complex num2 = new Complex(11, -11);
 //        String num2_str = num2.toString();
@@ -96,6 +95,28 @@ class TestComplexOperations {
         assertEquals("5.5 + 4.5i", num1.toString());
         // Checking that the num2 object has not been corrupted
 //        assertEquals(num2_str, num2.toString());
+    }
+
+    @Test
+    @DisplayName("Checking the method divisionByReal throw, when divader is complex")
+    public void test012() {
+        Complex num1 = new Complex(12, 12);
+        Complex num2 = new Complex(12, 12);
+
+        Exception exception = assertThrows(Exception.class, () -> num1.divisionByReal(num2));
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains("The divider is not a real number"));
+    }
+
+    @Test
+    @DisplayName("Checking the method divisionByReal throw, when divide by 0")
+    public void test013() {
+        Complex num1 = new Complex(12, 12);
+        Complex num2 = new Complex(0, 0);
+
+        Exception exception = assertThrows(Exception.class, () -> num1.divisionByReal(num2));
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains("Division by zero"));
     }
 
 

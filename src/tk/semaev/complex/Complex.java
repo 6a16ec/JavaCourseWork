@@ -91,25 +91,29 @@ public class Complex {
         );
     }
 
-    public void division(Complex divider) {
+
+    public void divisionByReal(Complex divider) throws Exception {
+        if (divider.isReal()) {
+            if (!isZero(divider.real_part)) {
+                this.real_part /= divider.real_part;
+                this.imaginary_part /= divider.real_part;
+            } else {
+                throw new Exception("Division by zero");
+            }
+        } else {
+            throw new Exception("The divider is not a real number");
+        }
+    }
+
+    public void division(Complex divider) throws Exception {
         Complex associated = divider.getAssociated();
         this.multiplication(associated);
         divider.multiplication(associated);
+        this.divisionByReal(divider);
         // divide by zero!!
-        this.real_part /= divider.real_part;
-        this.imaginary_part /= divider.real_part;
     }
 
 
-    static public Complex divisionByReal(Complex dividend, Complex divider) throws Exception {
-        if (!divider.isReal()) {
-            throw new Exception("The divisor is not a real number");
-        }
-        return new Complex(
-                dividend.real_part / divider.real_part,
-                dividend.imaginary_part / divider.real_part
-        );
-    }
 
 
 //    private Complex getConjugate() {
